@@ -3,14 +3,14 @@ package mylist;
 public class Node {
     
     private String value;
-    private Node next;
+    protected Node next;
     
     public Node(){
         value = null;
     }
     
-    public Node(String newValue){
-        value = newValue;
+    public Node(String newVal){
+        value = newVal;
         next = new Node();
     }
     

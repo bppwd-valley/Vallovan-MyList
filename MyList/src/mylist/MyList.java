@@ -5,7 +5,9 @@ public class MyList {
     Node head;
     
     public MyList() {
+        
         head = new Node();
+        
     }
     
     public void add(String value){
@@ -13,9 +15,12 @@ public class MyList {
         while(tmp.next.getValue() != null){
             tmp = tmp.next;
         }
+        tmp.next = new Node(value);
     }
     
     public void print(){
+    
+        
         
     }
 }
