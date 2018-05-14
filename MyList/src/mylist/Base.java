@@ -13,6 +13,9 @@ public class Base {
         list.add("Guslin");
         list.add("Vallovan");
         list.print();
+        
+        list.insert(4, "NO");
+        list.print();
     }
     
 }

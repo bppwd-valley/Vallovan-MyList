@@ -24,8 +24,17 @@ public class MyList {
     public void print(){
         Node tmp = head;
         while(tmp.next != null){
-            System.out.println(tmp.getValue());
             tmp = tmp.next;
+            System.out.println(tmp.getValue());
         }
+    }
+    
+    public void insert(int index, String newVal){
+        Node tmp = head;
+        for(int i = 0; i < index; i++){
+            tmp = tmp.next;
+            i++;
+        }
+        tmp.next = new Node(newVal, tmp.next.next);
     }
 }
