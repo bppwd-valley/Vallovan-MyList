@@ -5,7 +5,7 @@ public class MyList {
     Node head;
     
     public MyList() {
-        head = new Node();
+        head = new Node();   
     }
     
     public void add(String value){
@@ -23,8 +23,8 @@ public class MyList {
     
     public void print(){
         Node tmp = head;
-        while (tmp.next.getValue() != null){
-            System.out.println(tmp.getValue());
+        while(tmp.next.getValue() != null){
+            System.out.print(tmp.getValue());
             tmp = tmp.next;
         }
     }
