@@ -18,4 +18,8 @@ public class Node {
         return value;
     }
     
+    public void setValue(String input){
+        value = input;
+    }
+    
 }

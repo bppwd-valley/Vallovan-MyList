@@ -5,22 +5,27 @@ public class MyList {
     Node head;
     
     public MyList() {
-        
         head = new Node();
-        
     }
     
     public void add(String value){
-        Node tmp = head;
-        while(tmp.next.getValue() != null){
-            tmp = tmp.next;
+        if (head.getValue() == null){
+            head.setValue(value);
         }
-        tmp.next = new Node(value);
+        else {
+            Node tmp = head;
+            while(tmp.next.getValue() != null){
+                tmp = tmp.next;
+            }
+            tmp.next = new Node(value);
+        }
     }
     
     public void print(){
-    
-        
-        
+        Node tmp = head;
+        while (tmp.next.getValue() != null){
+            System.out.println(tmp.getValue());
+            tmp = tmp.next;
+        }
     }
 }
