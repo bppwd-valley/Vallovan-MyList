@@ -13,8 +13,11 @@ public class Base {
         list.add("Guslin");
         list.add("Vallovan");
         list.print();
-        
+        System.out.println("--------------------------------------");
         list.insert(4, "NO");
+        list.print();
+        System.out.println("--------------------------------------");
+        list.remove(4);
         list.print();
     }
     

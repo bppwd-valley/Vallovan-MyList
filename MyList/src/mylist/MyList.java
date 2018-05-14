@@ -37,4 +37,15 @@ public class MyList {
         }
         tmp.next = new Node(newVal, tmp.next.next);
     }
+    
+    public void remove(int index){
+        Node tmp = head;
+        for(int i = 0; i < index; i++){
+            tmp = tmp.next;
+            i++;
+            if(i == index){
+                tmp = null;
+            }
+        }  
+    }
 }
