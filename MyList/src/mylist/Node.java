@@ -14,6 +14,10 @@ public class Node {
         next = new Node();
     }
     
+    public void setValue(String input){
+        value = input;
+    }
+    
     public String getValue(){
         return value;
     }
