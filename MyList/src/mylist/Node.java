@@ -9,9 +9,9 @@ public class Node {
         value = null;
     }
     
-    public Node(String newVal){
+    public Node(String newVal, Node nextV){
         value = newVal;
-        next = new Node();
+        next = nextV;
     }
     
     public void setValue(String input){

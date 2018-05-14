@@ -9,22 +9,22 @@ public class MyList {
     }
     
     public void add(String value){
-        if (head.getValue() == null){
-            head.setValue(value);
+        if (head == null){
+            head = new Node(value, null);
         }
         else {
             Node tmp = head;
-            while(tmp.next.getValue() != null){
+            while(tmp.next != null){
                 tmp = tmp.next;
             }
-            tmp.next = new Node(value);
+            tmp.next = new Node(value, null);
         }
     }
     
     public void print(){
         Node tmp = head;
-        while(tmp.next.getValue() != null){
-            System.out.print(tmp.getValue());
+        while(tmp.next != null){
+            System.out.println(tmp.getValue());
             tmp = tmp.next;
         }
     }
