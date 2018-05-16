@@ -1,20 +1,20 @@
 package mylist;
 
-public class Node {
+public class Node<T> {
     
-    private String value;
+    private T value;
     protected Node next;
     
-    public Node(String newVal, Node nextV){
+    public Node(T newVal, Node nextV){
         value = newVal;
         next = nextV;
     }
     
-    public void setValue(String input){
+    public void setValue(T input){
         value = input;
     }
     
-    public String getValue(){
+    public T getValue(){
         return value;
     } 
 }

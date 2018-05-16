@@ -1,14 +1,14 @@
 package mylist;
 
-public class MyList {
+public class MyList<T> {
     
-    Node head;
+    Node<T> head;
     
     public MyList() {
         head = null;  
     }
     
-    public void addLast(String value){
+    public void addLast(T value){
         if (head == null){
             head = new Node(value, null);
         }
@@ -29,7 +29,7 @@ public class MyList {
         }
     }
     
-    public void insertAt(int index, String newVal){
+    public void insertAt(int index, T newVal){
         Node tmp = head;
         for(int i = 0; i < index; i++){
             tmp = tmp.next;
@@ -37,7 +37,7 @@ public class MyList {
         tmp.next = new Node(newVal, tmp.next);
     }
     
-    public void insertAfter(String target, String newVal){
+    public void insertAfter(T target, T newVal){
         Node tmp = head;
         while(!tmp.getValue().equals(target)){
             tmp = tmp.next;
@@ -45,7 +45,7 @@ public class MyList {
         tmp.next = new Node(newVal, tmp.next);
     }
     
-    public void insertBefore(String target, String newVal){
+    public void insertBefore(T target, T newVal){
         Node tmp = head;
         while(!tmp.next.getValue().equals(target)){
             tmp = tmp.next;
@@ -61,41 +61,41 @@ public class MyList {
         tmp.next = tmp.next.next;
     }
     
-    public void addFirst(String value){
+    public void addFirst(T value){
         Node tmp = head;
         head = new Node(value, tmp);
     }
     
-    public String get(int index){
+    public T get(int index){
         Node tmp = head;
         for(int i = 0; i <index+1; i++){
             tmp = tmp.next;
         }
-        return tmp.getValue();
+        return (T) tmp.getValue();
     } 
     
-    public String getFirst(){
+    public T getFirst(){
         Node tmp = head;
         tmp = tmp.next;
         if (head == null){
-            return "List is empty";
+            return (T) "List is empty";
         }
-        return tmp.getValue();
+        return (T) tmp.getValue();
     }
     
-    public String getLast(){
+    public T getLast(){
         Node tmp = head;
         tmp = tmp.next;
         if (head == null){
-            return "List is empty";
+            return (T) "List is empty";
         }
         while(tmp.next != null){
             tmp = tmp.next;
         }
-        return tmp.getValue();
+        return (T) tmp.getValue();
     }
     
-    public boolean contains(String target){
+    public boolean contains(T target){
         Node tmp = head;
         while(tmp.next != null){
             if(tmp.getValue().equals(target)){
