@@ -14,10 +14,10 @@ public class Base {
         list.add("Vallovan");
         list.print();
         System.out.println("--------------------------------------");
-        list.insert(4, "NO");
+        list.insert(3, "NO");
         list.print();
         System.out.println("--------------------------------------");
-        list.remove(4);
+        list.remove(3);
         list.print();
     }
     

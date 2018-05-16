@@ -33,19 +33,17 @@ public class MyList {
         Node tmp = head;
         for(int i = 0; i < index; i++){
             tmp = tmp.next;
-            i++;
         }
-        tmp.next = new Node(newVal, tmp.next.next);
+        tmp.next = new Node(newVal, tmp.next);
     }
     
     public void remove(int index){
         Node tmp = head;
-        for(int i = 0; i < index; i++){
+        for(int i = 0; i <index; i++){
             tmp = tmp.next;
-            i++;
-            if(i == index){
-                tmp = null;
-            }
-        }  
+        }
+        tmp.next = tmp.next.next;
     }
+    
+    
 }
