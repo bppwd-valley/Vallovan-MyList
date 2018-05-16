@@ -30,6 +30,8 @@ public class Base {
         System.out.println(list.getLast());
         System.out.println("--------------------------------------");
         System.out.println(list.toString());
+        System.out.println("--------------------------------------");
+        System.out.println(list.contains("Colin"));
     }
     
 }

@@ -5,7 +5,7 @@ public class MyList {
     Node head;
     
     public MyList() {
-        head = new Node();   
+        head = null;
     }
     
     public void addLast(String value){
@@ -39,7 +39,15 @@ public class MyList {
     
     public void insertAfter(String target, String newVal){
         Node tmp = head;
-        while(tmp.getValue() != target){
+        while(!tmp.getValue().equals(target)){
+            tmp = tmp.next;
+        }
+        tmp.next = new Node(newVal, tmp.next);
+    }
+    
+    public void insertBefore(String target, String newVal){
+        Node tmp = head;
+        while(!tmp.next.getValue().equals(target)){
             tmp = tmp.next;
         }
         tmp.next = new Node(newVal, tmp.next);
@@ -87,12 +95,26 @@ public class MyList {
         return tmp.getValue();
     }
     
+    public boolean contains(String target){
+        Node tmp = head;
+        while(tmp.next != null){
+            if(tmp.getValue().equals(target)){
+                return true;
+            }
+            tmp = tmp.next;
+        }
+        return false;
+    }
+    
     @Override
     public String toString(){
         Node tmp = head;
         String toS = "{ ";
-        while(tmp.next != null){
-            toS += tmp.getValue() + ", ";
+        while(tmp != null){
+            if(tmp.next != null)
+                toS += tmp.getValue() + ", ";
+            else
+                toS += tmp.getValue();
             tmp = tmp.next;
         }
         return toS + " }";
