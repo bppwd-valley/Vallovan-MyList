@@ -12,17 +12,24 @@ public class Base {
         list.addLast("=");
         list.addLast("Guslin");
         list.addLast("Vallovan");
-        list.print();
-        System.out.println("--------------------------------------");
-        list.insertAt(3, "NO");
-        list.print();
-        System.out.println("--------------------------------------");
-        list.remove(3);
-        list.print();
-        System.out.println("--------------------------------------");
-        list.addFirst("TEST");
-        list.print();
-        System.out.println("--------------------------------------");
+        System.out.println(list.toString());
+        list.addFirst("Test");
+        System.out.println(list.toString());
+        list.addLast("Another Test");
+        System.out.println(list.toString());
+        System.out.println(list.getFirst());
+        System.out.println(list.getLast());
+        System.out.println(list.get(3));
+        System.out.println(list.toString());
+        System.out.println(list.contains("Valley"));
+        System.out.println(list.contains("c"));
+        list.insertAt(3, "herro");
+        System.out.println(list.toString());
+        list.insertAt(18, "Hi");
+        System.out.println(list.toString());
+        list.insertBefore("Colin", "Yes this is another test");
+        System.out.println(list.toString());
+        list.insertAfter("Colin", "Yet another test");
         System.out.println(list.toString());
     }
     

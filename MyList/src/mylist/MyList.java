@@ -32,31 +32,55 @@ public class MyList<T> {
     public void insertAt(int index, T newVal){
         Node tmp = head;
         for(int i = 0; i < index; i++){
-            tmp = tmp.next;
+            if (tmp.next == null){
+                System.out.println("There is no value at this index");
+                break;
+            }else {
+                tmp = tmp.next;
+            }
         }
         tmp.next = new Node(newVal, tmp.next);
     }
     
     public void insertAfter(T target, T newVal){
         Node tmp = head;
-        while(!tmp.getValue().equals(target)){
-            tmp = tmp.next;
+        if (!contains(target)){
+            while(tmp.next != null){
+                tmp = tmp.next;
+            }
+            addLast(newVal);
+        } else {
+            while(!tmp.getValue().equals(target)){
+                tmp = tmp.next;
+            }
+            tmp.next = new Node(newVal, tmp.next);
         }
-        tmp.next = new Node(newVal, tmp.next);
     }
     
     public void insertBefore(T target, T newVal){
         Node tmp = head;
-        while(!tmp.next.getValue().equals(target)){
-            tmp = tmp.next;
+        if (!contains(target)){
+            while(tmp.next != null){
+                tmp = tmp.next;
+            }
+            addLast(newVal);
+        } else {
+            while(!tmp.next.getValue().equals(target)){
+                tmp = tmp.next;
+            }
+            tmp.next = new Node(newVal, tmp.next);
         }
-        tmp.next = new Node(newVal, tmp.next);
     }
     
     public void remove(int index){
         Node tmp = head;
         for(int i = 0; i <index; i++){
-            tmp = tmp.next;
+            if (tmp.next == null){
+                System.out.println("There is no value at this index");
+                break;
+            }else {
+                tmp = tmp.next;
+            }
         }
         tmp.next = tmp.next.next;
     }
@@ -68,8 +92,12 @@ public class MyList<T> {
     
     public T get(int index){
         Node tmp = head;
-        for(int i = 0; i <index+1; i++){
-            tmp = tmp.next;
+        for(int i = 0; i < index; i++){
+            if (tmp.next == null){
+                return (T) "There is no value at this index";
+            }else {
+                tmp = tmp.next;
+            }
         }
         return (T) tmp.getValue();
     } 
