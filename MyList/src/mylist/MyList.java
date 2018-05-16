@@ -5,7 +5,7 @@ public class MyList {
     Node head;
     
     public MyList() {
-        head = null;
+        head = null;  
     }
     
     public void addLast(String value){
@@ -24,8 +24,8 @@ public class MyList {
     public void print(){
         Node tmp = head;
         while(tmp.next != null){
-            tmp = tmp.next;
             System.out.println(tmp.getValue());
+            tmp = tmp.next;
         }
     }
     
@@ -63,7 +63,7 @@ public class MyList {
     
     public void addFirst(String value){
         Node tmp = head;
-        tmp.next = new Node(value, tmp.next);
+        head = new Node(value, tmp);
     }
     
     public String get(int index){
@@ -111,7 +111,7 @@ public class MyList {
         Node tmp = head;
         String toS = "{ ";
         while(tmp != null){
-            if(tmp.next != null)
+            if (tmp.next != null)
                 toS += tmp.getValue() + ", ";
             else
                 toS += tmp.getValue();

@@ -23,15 +23,7 @@ public class Base {
         list.addFirst("TEST");
         list.print();
         System.out.println("--------------------------------------");
-        System.out.println("Get first:");
-        System.out.println(list.getFirst());
-        System.out.println("--------------------------------------");
-        System.out.println("Get last:");
-        System.out.println(list.getLast());
-        System.out.println("--------------------------------------");
         System.out.println(list.toString());
-        System.out.println("--------------------------------------");
-        System.out.println(list.contains("Colin"));
     }
     
 }
